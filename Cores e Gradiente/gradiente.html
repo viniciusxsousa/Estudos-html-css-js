@@ -75,6 +75,44 @@
             #grupo-cores div:nth-child(10){
                 background-image: radial-gradient(ellipse, red 50%, rgba(50, 10, 200, .3), orange, green 100%);
             }
+
+            /*Gradiente linear indo ate o lado mais próximo*/
+            #grupo-cores div:nth-child(11){
+                background-image: radial-gradient(closest-side at 20% 90%, red 50%, rgba(50, 10, 200, .3), orange, green 100%);
+            }
+
+            /*Gradiente indo até o lado mais longe*/
+            #grupo-cores div:nth-child(12){
+                background-image: radial-gradient(farthest-side at 20% 90%, red 50%, rgba(50, 10, 200, .3), orange, green 100%);
+            }
+
+            /*Gradiente indo até o canto mais perto*/
+            #grupo-cores div:nth-child(13){
+                background-image: radial-gradient(closest-corner at 20% 90%,red 50%, rgba(50, 10, 200, .3), orange, green 100%);
+            }
+
+            /*Gradiente indo até o canto mais longe*/
+            #grupo-cores div:nth-child(14){
+                background-image: radial-gradient(farthest-corner at 20% 90%, red 50%, rgba(50, 10, 200, .3), orange, green 100%);
+            }
+
+            /*Repetição do gradiente linear*/
+            #grupo-cores div:nth-child(15){
+                background-image: repeating-linear-gradient(red 0%, yellow 10%, blue 50%);
+            }
+
+            /*Repetindo um radial gradiente*/
+            #grupo-cores div:nth-child(16){
+                background-image: repeating-radial-gradient(red 0%, yellow 10%, blue 50%);
+            }
+
+            /*Aplicando um radial gradiente por cima de uma imagem*/
+            #grupo-cores div:nth-child(17){
+                background-image: radial-gradient(closest-corner at 50% 10%, red, transparent), url(imagens/bg-2.jpg);
+                background-position: center -15px, center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
             
         </style>
     </head>
