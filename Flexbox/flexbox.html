@@ -52,12 +52,122 @@
             width: 90px;
         }
 
+        .flexbox:nth-child(8){
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flexbox:nth-child(8) div{
+            background-color: red;
+            flex-basis: 50px;
+        }
+
+        .flexbox:nth-child(9){
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flexbox:nth-child(9) div{
+            background-color: red;
+            flex-basis: 50px;
+        }
+
+        .flexbox:nth-child(9) div:nth-child(2){
+            flex-grow: 1;
+        }
+
+        .flexbox:nth-child(10){
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flexbox:nth-child(10) div{
+            flex-basis: 140px;
+            background-color: red;
+        }
+
+        .flexbox:nth-child(10) div:nth-child(2){
+            flex-shrink: 3;
+        }
+
+        .flexbox:nth-child(11) div:nth-child(2){
+            order: 2;
+        }
+
+        .flexbox:nth-child(12){
+            align-items: flex-start;
+        }
+
+        .flexbox:nth-child(12) div:nth-child(1){
+            align-self: stretch;
+        }
+
+        .flexbox:nth-child(12) div:nth-child(2){
+            align-self: flex-end;
+        }
+
+        .flexbox:nth-child(12) div:nth-child(3){
+            align-self: center;
+        }
+
+        .flexbox:nth-child(13){
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .flexbox:nth-child(13) div{
+            flex-basis: 60px;
+        }
+
     </style>
 </head>
 <body>
     <h1>Flexbox</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, nemo.</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, odit.</p>
+
+    <div class="flexbox">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
+
+    <div class="flexbox">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
+
+    <div class="flexbox">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
+
+    <div class="flexbox">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
+
+    <div class="flexbox">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
+
+    <div class="flexbox">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
 
     <div class="flexbox">
         <div class="div1">1</div>

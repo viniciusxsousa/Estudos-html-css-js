@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo</title>
+
+    <style>
+        .card-conteiner{
+            display: flex;
+        }
+
+        .card-flex{
+            width: 300px;
+            border: 1px solid black;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .card-flex p{
+            flex-grow: 1;
+        }
+
+        .card-flex button{
+            align-self: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Exemplo</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, vel?</p>
+
+    <section class="card-conteiner">
+        <article class="card-flex">
+            <h2>Card 1</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam dolor asperiores nihil corporis ducimus atque</p>
+            <button>Click</button>
+        </article>
+
+        <article class="card-flex">
+            <h2>Card 2</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis, suscipit!</p>
+            <button>Click</button>
+        </article>
+
+        <article class="card-flex">
+            <h2>Card 3</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, doloribus!</p>
+            <button>Click</button>
+        </article>
+    </section>
+</body>
+</html>
