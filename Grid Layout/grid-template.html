@@ -34,7 +34,7 @@
         .grid-conteiner{
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: 150px 100px;
+            grid-template-rows: 150px 100px 100px;
 
             /*Espaço entre as linhas*/
             grid-row-gap: 40px;
@@ -42,12 +42,25 @@
             grid-column-gap: 20px;
 			/*Atalho: linha e coluna*/
             grid-gap: 20px 5px;
-
-
         }
 
+        /*Posicionando grid-item*/
+        .grid-itens:nth-child(1){
+            background-color: red;
+            grid-column: 2 / -1;
+            grid-row: 1 / 2;
+        }
 
-        
+        /*Mesclar: Forma tradicional*/
+        /*.grid-itens:nth-child(2){
+            grid-row: 1 / 3;
+        } */
+
+        /*Forma: Usando span*/
+        .grid-itens:nth-child(2){
+            grid-row: 1 / span 2;
+        }
+
 
     </style>
 
