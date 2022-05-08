@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura</title>
+
+    <style>
+
+        .grid-conteiner{
+            display: grid;
+            width: 90%;
+            background-color: #ccc;
+            margin: 30px auto;
+        }
+
+        .grid-itens{
+            background-color: orange;
+            padding: 15px;
+        }
+
+        /*Grid*/
+        .grid-conteiner{
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 100px 50px 1fr 50px;
+            grid-gap: 20px;
+            grid-template-areas: "header header header"
+                                 "nav    nav    aside"
+                                 "main   main   aside"
+                                 "footer footer aside";
+        }
+
+        .header{
+           grid-area: header;
+        }
+
+        .nav{
+            grid-area: nav;
+        }
+
+        .main{
+            grid-area: main;
+            min-height: 200px;
+        }
+
+        .aside{
+           grid-area: aside;
+        }
+
+        .footer{
+           grid-area: footer;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Estrutura de Layout</h1>
+    <div class="grid-conteiner">
+        <div class="grid-itens header">Header</div>
+        <div class="grid-itens nav">Nav</div>
+        <div class="grid-itens main">Main</div>
+        <div class="grid-itens aside">Aside</div>
+        <div class="grid-itens footer">Footer</div>
+    </div>
+</body>
+</html>
