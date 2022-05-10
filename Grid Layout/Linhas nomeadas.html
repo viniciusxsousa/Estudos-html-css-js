@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura</title>
+
+    <style>
+
+        .grid-conteiner{
+            display: grid;
+            width: 90%;
+            background-color: #ccc;
+            margin: 30px auto;
+        }
+
+        .grid-itens{
+            background-color: orange;
+            padding: 15px;
+        }
+
+        /*Grid*/
+        .grid-conteiner{
+            grid-template-rows: [header-start] 100px [header-end nav-start] 50px [nav-end main-start] 1fr [main-end footer-start] 50px [footer-end];
+            
+            grid-template-columns: [col1-start] 1fr [col1-end col2-star] 1fr [col2-end col3-start] 1fr [col3-end];
+            grid-gap: 20px;
+        }
+
+        .header{
+            grid-column: col1-start / col3-end;
+        }
+
+        .nav{
+           grid-column: col1-start / col2-end;
+        }
+
+        .main{
+            grid-column: col1-start / col2-end;
+            min-height: 200px;
+        }
+
+        .aside{
+            grid-row: nav-start / footer-end;
+            grid-column: col3-start / col3-end;
+        }
+
+        .footer{
+            grid-column: col1-start / col3-end;
+            grid-row: footer
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Estrutura de Layout</h1>
+    <div class="grid-conteiner">
+        <div class="grid-itens header">Header</div>
+        <div class="grid-itens nav">Nav</div>
+        <div class="grid-itens main">Main</div>
+        <div class="grid-itens aside">Aside</div>
+        <div class="grid-itens footer">Footer</div>
+    </div>
+</body>
+</html>
