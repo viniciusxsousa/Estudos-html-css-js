@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill e Fit</title>
+
+    <style>
+
+        .grid-conteiner{
+            display: grid;
+            grid-gap: 15px;
+            width: 90%;
+            background-color: #ccc;
+            margin: 30px auto;
+        }
+
+        .grid-itens{
+            font-family: sans-serif;
+            padding: 15px;
+            background-color: orange;
+        }
+
+        /* GRID */
+        .grid-conteiner{
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            grid-auto-rows: 150px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Auto fill e fit</h1>
+    
+    <div class="grid-conteiner">
+        <div class="grid-itens">1</div>
+        <div class="grid-itens">2</div>
+        <div class="grid-itens">3</div>
+        <div class="grid-itens">4</div>
+        <div class="grid-itens">5</div>
+        <div class="grid-itens">6</div>
+        <div class="grid-itens">7</div>
+        <div class="grid-itens">8</div>
+        <div class="grid-itens">9</div>
+        <div class="grid-itens">10</div>
+        <div class="grid-itens">11</div>
+        <div class="grid-itens">12</div>
+    </div>
+
+</body>
+</html>
