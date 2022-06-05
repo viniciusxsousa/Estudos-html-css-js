@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+
+    <style>
+
+        /*Definindo a animação*/
+        @keyframes andar{
+            0%{
+                background-color: yellow;
+                transform: translatex(0px);
+            }
+            100%{
+                transform: translate(300px);
+                background-color: blue;
+            }
+
+        }
+
+        #animacao div{
+            width: 80px;
+            height: 50px;
+            border: 2px solid red;
+        }
+
+
+        /*Difinindo uma animação com time-function
+        Que informa qual será a aceleração da animação*/
+        #animacao div:nth-child(1){
+            animation: andar 2s ease-in;
+        }
+
+        /*Definindo as propriedades 
+        iteration-contu: Que definir o número de vezes que a propriedade irá ocorrer
+        direction: Definir a direção da animação*/
+        #animacao div:nth-child(2){
+            animation: andar 2s ease-in-out 3 alternate;
+        }
+
+        /*Definindo a propriedade
+        Delay: Tempo de atraso para iniciar*/
+        #animacao div:nth-child(3){
+            animation: andar 2s ease-in 2s infinite alternate;
+        }
+
+        /*Definindo a propriedade
+        fill-mode: quando a animação e o elemento tem a mesma propriedade com valor diferentes o fill-mode defini qual ira prevalecer.*/
+        #animacao div:nth-child(4){
+            background-color: red;
+            animation: andar 2s ease-in 2s 2 alternate forwards;
+        }
+
+        /*Definindo a propriedade
+        play-stant: que diz qual o estado da animação (pausado ou executando)*/
+        #animacao div:nth-child(5){
+            animation: andar 2s ease-in infinite alternate;
+        }
+
+        #animacao div:nth-child(5):hover{
+            animation-play-state: paused;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Animação</h2>
+
+    <div id="animacao">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+
+    
+</body>
+</html>
