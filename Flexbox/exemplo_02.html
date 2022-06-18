@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexboc</title>
+
+    <style>
+
+        .conteiner{
+            border: 2px solid orange;
+        }
+
+        .conteiner div{
+            height: 80px;
+            width: 100px;
+            border-radius: 8px;
+        }
+
+        .conteiner__elemento1{
+            background-color: #b6b8d6;
+        }
+
+        .conteiner__elemento2{
+            background-color: #7e78d2;
+        }
+
+        .conteiner__elemento3{
+            background-color: #6f58c9;
+        }
+
+        .conteiner:nth-child(3){
+            display: flex;
+            flex-direction: row;
+        }
+
+        .conteiner:nth-child(5){
+            display: flex;
+            flex-direction: column;
+        }
+
+        .conteiner:nth-child(7){
+            display: flex;
+            justify-content: center;
+        }
+
+        .conteiner:nth-child(9){
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .conteiner:nth-child(11){
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .conteiner:nth-child(13){
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .conteiner:nth-child(15){
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .conteiner:nth-child(17){
+            height: 200px;
+            border: 2px solid orange;
+            display: flex;
+            align-items: center;
+        }
+
+        .conteiner:nth-child(19){
+            height: 200px;
+            border: 2px solid orange;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .conteiner:nth-child(21){
+            border: 2px solid orange;
+            height: 200px;
+            display: flex;
+            align-items: flex-end;
+        }
+        
+        .conteiner-stretch div{
+            width: 100px;
+        }
+
+        .conteiner-stretch{
+            border: 2px solid orange;
+            height: 200px;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .conteiner:nth-child(25){
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        .conteiner:nth-child(27){
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .conteiner:nth-child(29){
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .conteiner:nth-child(31){
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+        }
+
+        .conteiner:nth-child(33){
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        .conteiner:nth-child(35){
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-end;
+        }
+
+        .conteiner:nth-child(37){
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-around;
+        }
+
+        .conteiner:nth-child(39){
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+
+        .conteiner:nth-child(41){
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            gap: 10px 30px
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <h1>Flexbox</h1>
+
+    <p>flex-direction: row</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>flex-direction: columns</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>Justify-content: center</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>Justify-content: flex-start</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>Justify-content: flex-end</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>justify-content: spance-between</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>justify-content: spance-around</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>Aling-itens: center</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>Aling-itens: flex-start</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>aling-itens: flex-end</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>aling-itens: stretch</p>
+    <div class="conteiner-stretch">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>flex-wrap: nowrap</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>flex-wrap: wap</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>Sem - Aling-content</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>Aling-content: center</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>Aling-content: flex-start</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>Aling-content: flex-end</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>Aling-content: spance-around</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>Aling-content: spance-between</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+    <p>Gap</p>
+    <div class="conteiner">
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+        <div class="conteiner__elemento1">1</div>
+        <div class="conteiner__elemento2">2</div>
+        <div class="conteiner__elemento3">3</div>
+    </div>
+
+
+</body>
+</html>
