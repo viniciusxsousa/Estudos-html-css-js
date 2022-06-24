@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+    <h1>Exercicio 01 - Operadores aritméticos</h1>
+    
+    <script>
+        /*
+        Exercicio: Pedir para o usuário digitar dois números, converte-los para inteiro ou número real.Depois em um alert deve-se exibir a seguinte mensagem, "O resto da divisão de (x) por (x) é : (resultado), em outro alert será exibido a seguinte mensagem "O numero (x) elevado a (x) é: (resultado)."
+        */
+
+        var numero1 = parseInt(prompt('Digite um número: '));
+        var numero2 = parseInt(prompt('Digite outro número'));
+
+        var restoDivisão = numero1 % numero2;
+        var elevado = numero1 ** numero2;
+
+        alert('O resto da visião de '+ numero1 +' por '+ numero2 +' é: '+ restoDivisão);
+        alert('O número '+ numero1 +' elevado a '+ numero2 +' é: '+ elevado);
+
+    </script>
+
+</body>
+</html>
