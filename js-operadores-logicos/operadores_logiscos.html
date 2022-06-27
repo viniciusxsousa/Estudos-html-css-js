@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Op. Logicos</title>
+</head>
+<body>
+    <h1>Operadores Logicos</h1>
+
+    <script>
+        /*Pedir para o usuário digitar dois números e mostrar uma mensagem informando se foi aprovado ou não. A nota de corte é 5. Contudo, se qualquer uma das notas for 0, reprovar automaticamente. */
+
+        var nota1 = parseFloat(prompt('Digite sua primeira nota:'));
+        var nota2 = parseFloat(prompt('Digite sua segunda nota:'));
+
+        var media = (nota1 + nota2)/2;
+
+        if(nota1 == 0 || nota2 == 0){
+            alert('Infelizmente você tem um zero, está reprovado automaticamente');
+        } else {
+            if(media >= 5){
+                alert('Parabéns, você foi aprovado!');
+            } else {
+                alert('Infelizmente sua média foi a baixo de 5');
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
