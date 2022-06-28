@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício</title>
+</head>
+<body>
+    <h1>Refatorando o exercicio de controle de descição</h1>
+    
+    <script>
+        //Desafio: Refatorar o exercício feito em controle de descição utilizando os operadores lógicos.
+
+        var numeroJogador1 = parseFloat(prompt('Jogador 1, digite um número:'));
+        var numeroJogador2 = parseFloat(prompt('Jogador 2, digite um número:'));
+
+        var numeroSorteado = parseInt(Math.random() * 2);
+
+        console.log('>>> Jogador 1: ' + numeroJogador1);
+        console.log('>>> Jogador 2: ' + numeroJogador2);
+        console.log('>>> Sorteado: ' + numeroSorteado);
+
+        if(numeroJogador1 === numeroJogador2){
+            alert('Empate!');
+        } else if((numeroSorteado === 0 && numeroJogador1 < numeroJogador2) || (numeroSorteado === 1 && numeroJogador1 > numeroJogador2)){
+            alert('Parabéns jogador 1, você ganhou');
+        } else {
+            alert('Parabéns jogador 2, você ganhou');
+        }
+
+    </script>
+
+</body>
+</html>
