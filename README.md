@@ -1,2 +1,2 @@
 # Estudos-html-css-js
- Assustos que veio estudando sobre FrontEnd
+ Assustos que venho estudando sobre FrontEnd
