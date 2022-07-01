@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laço de repetição</title>
+</head>
+<body>
+    <h1>Laço de repetição</h1>
+
+    <script>
+        //Problema: Pedir para o usuário digitar um número e mostrar a tabuada desse número de 1 a 1000
+
+        var numero = parseInt(prompt('Insira um valor para ver sua tabuada'));
+     
+        var contador = 1;
+        var linha = 1;
+
+
+        while(contador <= 1000){
+            document.write(numero + ' X ' + contador + ' = ' + (numero  * contador) + '<br>');
+            contador = contador + 1;
+            linha = linha + 1;
+            if(linha > 10){
+                document.write('----------------- <br>');
+                linha = 1;
+            }
+        }
+
+       
+
+
+    </script>
+</body>
+</html>
