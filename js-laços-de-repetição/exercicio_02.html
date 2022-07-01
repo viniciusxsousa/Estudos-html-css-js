@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02</title>
+</head>
+<body>
+    <h1>Exercício 02 - laço de repetição</h1>
+
+    <p>Para este exercicio aplique a lógica necessário para mostrar os anos que são realmente bissextos, respeitando a regra: Os anos bissextos são múltiplos de 4, não múltiplos de 100 (1900 não é bissexto) e múltiplos de 400 (2000 é bissexto). <br>(fonte:http://www.ponteiro.com.br/bisse.php)</p>
+    <h2>Resultado:<br></h2>
+
+    <script>
+
+        for(var ano = 1004; ano <= 2022; ano++){
+            if((ano % 4 === 0) && (!(ano % 100 === 0) || (ano % 400 === 0) )){
+                document.write(ano + '<br>');
+            }
+        }
+
+    </script>
+</body>
+</html>
