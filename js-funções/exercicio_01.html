@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+</head>
+<body>
+    <h1>Funções - Exercício 01</h1>
+
+    <button onclick="somar()">+</button>
+    <button onclick="subtracao()">-</button>
+    <button onclick="multiplicacao()">*</button>
+    <button onclick="divisao()">/</button>
+
+    <div class="mostrador">0</div>
+
+    <script>
+
+        var numero = parseFloat(prompt('Digite um número'));
+        var $mostrador = document.querySelector(".mostrador");
+
+        $mostrador.innerHTML = numero;
+
+        function somar(){
+            var somar = parseFloat(prompt('Digite o número a ser somado'));
+
+            numero = somar + numero;
+
+            $mostrador.innerHTML = numero;
+        }
+
+        function subtracao(){
+            var subtracao = parseFloat(prompt('Digite um número para ser subtraído'));
+
+            numero = numero - subtracao;
+
+            $mostrador.innerHTML = numero;
+        }
+
+        function multiplicacao(){
+            var multiplica = parseFloat(prompt('Digite um número a ser multiplicado'));
+
+            numero = numero * multiplica;
+
+            $mostrador.innerHTML = numero;
+        }    
+        
+        function divisao(){
+            var divisao = parseFloat(prompt('Digite um número para ser dividido'));
+
+            numero = numero / divisao;
+
+            $mostrador.innerHTML = numero;
+        }
+
+    </script>
+
+</body>
+</html>
