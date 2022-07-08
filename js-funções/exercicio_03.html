@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 03</title>
+</head>
+<body>
+    <h1>Exercicio 03 - funções</h1>
+    <p>Repetir o problema do conteúdo de função, porém dessa vez ao invés de ter várias funções realizando diferentes operações, vamos ter apenas uma única função que recebe um parâmetro e identifica qual será a operação.</p>
+    <hr>
+
+    <button onclick="calcular('+')" >+</button>
+    <button onclick="calcular('-')" >-</button>
+    <button onclick="calcular('*')" >*</button>
+    <button onclick="calcular('/')" >/</button>
+
+    <div class="resultado">0</div>
+
+</body>
+<script>
+
+    var numero1 = parseFloat(prompt('Digite um número:'));
+
+    var $resultado = document.querySelector('.resultado');
+
+    $resultado.innerHTML = numero1;
+
+    function calcular(operador){
+        var numero2 = parseFloat(prompt('Digite um número:'));
+
+        switch(operador){
+            case '+':
+                numero1 += numero2;
+                break
+            case '-':
+                numero1 -= numero2;
+                break
+            case '*':
+                numero1 *= numero2;
+                break
+            case '/':
+                numero1 /= numero2;
+        }
+
+        $resultado.innerHTML = numero1;
+    }
+
+</script>
+</html>
