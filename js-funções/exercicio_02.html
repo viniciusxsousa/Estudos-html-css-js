@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 02</title>
+</head>
+<body>
+    <h1>Exercício 02 - Funções</h1>
+    <p>Pedir para o usuário digitar dois números que representam os lados de um retângulo assim que a página é carregada. Mostrar na tela a área total quando clicar num botão.</p>
+    <hr>
+
+    <button onclick="calcularArea(altura, largura)">Mostrar área</button>
+    <div class="resultado">Resultado: </div>
+
+    <script>
+
+        var altura = parseFloat(prompt('Informe a altura do retangulo: '));
+        var largura = parseFloat(prompt('Informe a largura de um retangulo'));
+
+        function calcularArea(largura, altura){
+            var area = altura * largura;
+
+            var $resultado = document.querySelector('.resultado');
+
+            $resultado.innerHTML = 'A área total do retangulo é: ' + area;
+        }
+
+    </script>
+</body>
+</html>
