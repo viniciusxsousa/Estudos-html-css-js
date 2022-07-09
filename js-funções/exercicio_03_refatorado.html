@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 03</title>
+</head>
+<body>
+    <h1>Exercicio 05 - funções</h1>
+    <p>Repetir o exercício 03, só que agora refatorando, desacoplando as funções</p>
+    <hr>
+
+    <button onclick="iniciar('+')" >+</button>
+    <button onclick="iniciar('-')" >-</button>
+    <button onclick="iniciar('*')" >*</button>
+    <button onclick="iniciar('/')" >/</button>
+
+    <div class="resultado">0</div>
+
+</body>
+<script>
+
+    var numero1 = parseFloat(prompt('Digite um número:'));
+
+    escrever(numero1);
+
+    function iniciar(operador){
+        var numero1 = document.querySelector('.resultado').textContent;
+        var numero1 = parseFloat(numero1);
+        var numero2 = parseFloat(prompt('Digite outro número:'));
+
+        var mensagem = calcular(operador, numero1, numero2);
+
+        escrever(mensagem);
+
+    }
+
+    function calcular(operador, x, y){
+        
+        var resultadoCalculo = null
+
+        switch(operador){
+            case '+':
+                resultadoCalculo = x + y;
+                break
+            case '-':
+                resultadoCalculo = x - y
+                break
+            case '*':
+                resultadoCalculo = x * y;
+                break
+            case '/':
+                resultadoCalculo = x / y;
+        }
+
+        return resultadoCalculo;
+    }
+
+    function escrever(x){
+        document.querySelector('.resultado').innerHTML = x;
+    }
+
+</script>
+</html>
