@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 04</title>
+</head>
+<body>
+    <h1>Exercício 04 - Funções</h1>
+    <p>Pedir para o usuário digitar dois números que representem os lados de um retângulo. Mostrar na tela a área total de duas forma distinta: em um alert ou em uma div (depende do botão selecionado). Esse código não precisa ser executado quando a página é aberta.</p>
+    <hr>
+
+    <button onclick="exibirAlert()">Calcular no alert</button>
+    <button onclick="exibirTela()">Calcular na Div</button>
+
+    <div class="area"></div>
+
+</body>
+<script>
+
+    function exibirAlert(){
+        var altura = parseFloat(prompt('Digite a altura:'));
+        var largura = parseFloat(prompt('Digite a largura:'));
+
+        var area = calcularArea(largura, altura);
+
+        alert('A área total é: ' + area);
+    }
+
+    function exibirTela(){
+        var altura = parseFloat(prompt('Digite a altura:'));
+        var largura = parseFloat(prompt('Digite a largura:'));
+
+        var area = calcularArea(largura, altura);
+
+        document.querySelector('.area').innerHTML = 'A área total é: ' + area;
+    }
+
+    function calcularArea(largura, altura){
+        return largura * altura;
+    }
+
+</script>
+</html>
