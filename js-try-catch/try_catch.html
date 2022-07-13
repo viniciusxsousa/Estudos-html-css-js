@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang=pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try...</title>
+</head>
+
+<body>
+    <h1>Try & Catch</h1>
+    <p>Pedir para o usuário digitar dois números que representem os lados de um retângulo.Mostrar na tela a área total. Esse código deve ser executado quando a página é aberta e também ao clicar em um botão. O que acontece se o usuário passar um dado inválido  ?</p>
+    <hr>
+    <button onclick="iniciar()" >Recalcular</button>
+    <div class="mostrador">0</div>
+</body>
+
+<script>
+
+    iniciar();
+
+
+    function iniciar(){
+        var lado1 = parseFloat(prompt('Informe a altura do retangulo:'));
+        var lado2 = parseFloat(prompt('Digite a largura do retangulo:'));
+
+        try{
+            var area = calcularArea(lado1, lado2);
+        } catch(erro){
+            alert(erro);
+        }
+
+        escrever(area);
+    }
+
+    function calcularArea(l1, l2){
+
+        if(isNaN(l1) || isNaN(l2)){
+            throw new Error ('O parâmetro passado é inválido.');
+        }
+
+        return l1 * l2;
+    }
+
+    function escrever(text){
+        document.querySelector('.mostrador').innerHTML = text;
+    }
+</script>
+</html>
