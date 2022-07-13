@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Array</title>
+    </head>
+    <body>
+        <h1>Array</h1>
+        <p>Problema: Mostrar na tela todos os produtos disponível para a compra. Os nomes dos produtos estão agrupados num array. </p>
+        <hr>
+        <div class="resultado"></div>
+    </body>
+    <script>
+
+        var produtos = new Array('Caneta', 'Borracha', 'Lápis', 'Caderno');
+
+        var $resultado = document.querySelector('.resultado');
+
+        for(var i = 0; i < produtos.length; i++){
+            $resultado.innerHTML += produtos[i] + '<br>';
+        }
+
+    </script>
+
+</html>
