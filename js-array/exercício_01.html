@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+</head>
+<body>
+    <h1>Array - exercíco 01</h1>
+    <p>Definir um array com os dias da semana e ao carregar a aplicação ela ira exibir qual o dia de ‘hoje’ com uma mensagemz</p>
+    <hr>
+    <div class="mensagem"></div>
+</body>
+<script>
+
+    var diasSemana = new Array('Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo');
+
+    var $campo = document.querySelector('.mensagem');
+
+    var data = new Date();
+
+    var diaHoje = data.getDay();
+
+    var msg = 'Bem-vindo, hoje é ' + diasSemana[diaHoje];
+    
+    $campo.innerHTML = msg;
+
+</script>
+</html>
