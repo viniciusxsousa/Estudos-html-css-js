@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02</title>
+</head>
+<body>
+    <h2>Array - Exercício 02</h2>
+    <p>Mostrar na tela a soma dos números pares da seguinte sequencia no array: 25, 30, 45, 28, 0, 12, 78, 64.</p>
+    <hr>
+    <div class="resultado"></div>
+</body>
+<script>
+    var numeros = new Array(25, 30, 45, 28, 0, 12, 78, 64);
+
+    var soma = null;
+
+    var $campo = document.querySelector('.resultado');
+
+    for(var i = 0; i < numeros.length; i++){
+        if(numeros[i] % 2 === 0){
+            soma += numeros[i];
+        }
+    }
+
+    $campo.innerHTML = 'A soma dos valores é: ' + soma;
+
+</script>
+</html>
