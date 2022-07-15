@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 02</title>
+</head>
+<body>
+    <h1>Objeto - Exercício 02</h1>
+    <p>criar um array com três objetos. Cada objeto deverá ter duas propriedades (nome e email). Depois, basta mostrar na tela</p>
+    <hr>
+    <div class="saida">Vazio</div>
+</body>
+<script>
+    var $saida = document.querySelector('.saida');
+
+    var pessoas = [
+        {'nome': 'Vinicius Sousa', 'email': 'viniciuszika@gmail.com'},
+        {'nome': 'Gordofredo das banhas', 'email': 'gordinho@bol.com'},
+        {'nome': 'Jubileia', 'email': 'jubi@leia.com.br'}
+    ];
+
+    var texto = '';
+
+    for(var i = 0; i < pessoas.length; i++){
+        texto += 'Nome: ' + pessoas[i].nome + '<br>';
+        texto += 'E-mail: ' + pessoas[i].email + '<br>';
+        texto += '<br>';
+    }
+
+    $saida.innerHTML = texto;
+</script>
+</html>
