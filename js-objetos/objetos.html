@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto</title>
+</head>
+<body>
+    <h1>Objetos</h1>
+    <p>Mostrar na tela todos os dados de um produto específico, contendo quantidade em estoque e preço. Estes dados estarão agrupados em um objeto.</p>
+    <hr>
+    <div class="tela">Vazio</div>
+</body>
+<script>
+
+    var produto1 = new Object();
+    var $tela = document.querySelector('.tela');
+
+    produto1.nome = 'Banana';
+    produto1.preco = 3.5;
+    produto1.quantidade = 20;
+
+    mostrarProduto(produto1);
+
+    function mostrarProduto(produto){
+        var exibir = null;
+
+        exibir = produto.nome + '<br>';
+        exibir += produto.preco + '<br>';
+        exibir += produto.quantidade + '<br>';
+
+        $tela.innerHTML = exibir;
+    }
+
+</script>
+</html>
