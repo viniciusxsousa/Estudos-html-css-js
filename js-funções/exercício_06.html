@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 06</title>
+</head>
+<body>
+    <h1>Exercício 06 - Funções</h1>
+    <p>Criar uma função que retorne a média de números passados  por parâmetros. Essa função pode receber quantos números forem necessários. 
+        exemplos:
+         calcularMedia(2, 4);
+         calcularMedia(1, 1, 2, 3, 5);</p>        
+</body>
+<script>
+
+
+    (function(){
+        'use strict';
+
+        console.log(calcularMedia(2, 4));
+        console.log(calcularMedia(10, 10, 20, 0, 50));
+
+        function calcularMedia(){
+            var soma = 0;
+
+            for(var i = 0; i < arguments.length; i++){
+                soma += arguments[i];
+            }
+
+            return soma /= arguments.length;
+        }
+    })()
+
+
+
+</script>
+</html>
