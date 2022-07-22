@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 07</title>
+</head>
+<body>
+    <h1>Exercício 07 - Funções</h1>
+    <p>Crie uma função que retorne o índice de massa corporal. Crie uma outra função que receba esse índice e retorne uma string informando sua classificação.</p>
+</body>
+<script>
+
+    (function(){
+        'use strict';
+
+        var peso = parseFloat(prompt('Informe seu peso:'));
+        var altura = parseFloat(prompt('Informe sua altura'));
+
+        var massa = calcularMassaCorporal(peso, altura);
+
+        classificacaoImc(massa);
+
+        function calcularMassaCorporal(peso, altura){
+            var calculo = peso / (altura ** 2);
+            return calculo;
+        }
+
+        function classificacaoImc(indice){
+            if(indice >= 16 && indice < 17){
+                console.log('Muito abaixo do peso');
+            }else if(indice >= 17 && indice < 18.5){
+                console.log('Abaixo do peso');
+            }else if(indice >= 18.5 &&  indice < 30){
+                console.log('Peso normal');
+            }else if(indice >= 25 && indice < 30){
+                console.log('Acima do peso');
+            }else if(indice >= 30 && indice < 35){
+                console.log('Obesidade de primeiro grau');
+            }else if(indice >= 35 && indice < 41){
+                console.log('Obesidade de segundo grau');
+            }else if(indice > 40){
+                console.log('Obsesidade de terceiro grau');
+            }
+        }
+
+    })()
+
+</script>
+</html>
