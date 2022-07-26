@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 02</title>
+
+    <style>
+
+        body{
+            background-image: linear-gradient(174deg, rgba(7,33,92,1) 50%, rgba(0,212,255,1) 84%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .conteudo{
+            width: 80%;
+            margin: auto;
+            border-radius: 10px;
+            text-align: center;
+            background-color: rgba(59, 115, 141, 0.253);
+            
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="conteudo">
+        <h1>Exercício 2 - DOM</h1>
+        <p class="conteudo__paragrafo">Texto de saudação.</p>
+    </div>
+
+</body>
+<script>
+
+    (function(){
+        'use strict';
+
+        var nome = prompt('Digite seu nome:');
+        var $areaDaMensagem = document.querySelector('.conteudo__paragrafo');
+
+
+        $areaDaMensagem.innerHTML = "Bem-vindo, <b>" + nome +"</b>!";
+    })()
+
+</script>
+</html>
