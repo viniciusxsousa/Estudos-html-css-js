@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 05</title>
+
+    <style>
+
+        td{
+            padding: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Exercício 05</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Nome</td>
+                <td>nota 1</td>
+                <td>nota 2</td>
+                <td>nota 3</td>
+                <td>nota 4</td>
+                <td>Média</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Vinicius</td>
+                <td>8.5</td>
+                <td>9.8</td>
+                <td>10</td>
+                <td>8</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>João</td>
+                <td>9</td>
+                <td>3</td>
+                <td>5.8</td>
+                <td>10</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Maria</td>
+                <td>9</td>
+                <td>7.5</td>
+                <td>7.9</td>
+                <td>10</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+
+    (function(){
+        'use strict';
+
+        var $corpoDaTabela = document.querySelector('tbody');
+        console.log($corpoDaTabela);
+        
+        var soma = 0;
+        var media = 0;
+
+        //laço de repetição que vai percorrer as linhas da tbody
+        for(var i = 1; i <= 3; i++){
+            var linha = $corpoDaTabela.querySelectorAll('tr:nth-child('+i+') td');
+
+            //Laço de repetição que vai percorrer as colunas da linha
+            for(var x = 1; x <= 4; x++){
+                debugger
+                var nota = parseFloat(linha[x].textContent);
+
+                soma += nota;
+            }
+
+            media = soma / 4;
+            linha[5].textContent = media;
+            soma = 0;
+        }
+
+
+    })()
+
+    
+
+</script>
+</html>
