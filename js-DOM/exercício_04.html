@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 04</title>
+
+    <style>
+
+        body{
+            background-image: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+            display: flex;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .conteudo{
+            text-align: center;
+            background-color: rgba(32, 99, 161, 0.795);
+            border-radius: 10px;
+            width: 70%;
+            margin: auto;
+            padding: 10px 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="conteudo">
+        <h1>Exercício 04 - DOM</h1>
+        <input type="text" id="name" disabled>
+    </div>
+    
+</body>
+<script>
+
+    (function(){
+        'use strict';
+
+        var nome = 'Vinicius';
+        var sobrenome = 'Sousa';
+        var $areaNome = document.querySelector('#name');
+
+        $areaNome.value = nome + " " + sobrenome;
+        
+    })()
+
+</script>
+</html>
