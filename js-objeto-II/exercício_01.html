@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exer 01</title>
+</head>
+<body>
+    <h1>Exercício 01 - Objetos II</h1>
+    <p>Temos três objetos, cada objeto tem duas propriedades: nome e sobrenome. Precisamos mostrar no console o nome completo de cada um deles.</p>   
+</body>
+<script>
+
+    (function(){
+        'use strict';
+
+        var pessoa01 = new Pessoa('Vinicius', 'Sousa');
+        var pessoa02 = new Pessoa('Maria', 'Silva');
+        var pessoa03 = new Pessoa('Godofredo', 'Alves');
+
+        pessoa01.exibirNome();
+        pessoa02.exibirNome();
+        pessoa03.exibirNome();
+
+        console.log(pessoa01);
+
+
+        function Pessoa(nome, sobrenome){
+            this.nome = nome;
+            this.sobrenome = sobrenome;
+            this.exibirNome = function(){
+                console.log(this.nome + ' ' + this.sobrenome);
+            }
+        }
+    })()
+
+</script>
+</html>
