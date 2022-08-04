@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 01</title>
+
+    <style>
+
+        body{
+            font-family: sans-serif;
+            background-color: rgb(219, 219, 219);
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .formulario{
+            background-color: rgb(255, 255, 255);
+            width: 35%;
+            border: 2px solid rgba(56, 105, 212, .5);
+            border-radius: 10px;
+        }
+
+        .formulario__texto{
+            text-align: center;
+            font-size: 2.5em;
+            color: rgb(76, 156, 221);
+        }
+
+        .formulario__texto::after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%); 
+        }
+
+        .formulario__form input:nth-child(2), .formulario__form input:nth-child(4), .formulario__form button{
+            display: block;
+            margin-left: 25px;
+        }
+
+        .formulario__form label:nth-child(1), .formulario__form label:nth-child(3), .formulario__form :nth-child(5){
+            display: block;
+            margin-left: 25px;
+        }
+
+        .formulario__button{
+            width: calc(100% - 50px);
+            border: 1px solid black;
+            background-color: rgb(0, 140, 255);
+            height: 30px;
+            color: white;
+            font-size: 1.2em;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <main class="formulario">
+        <h1 class="formulario__texto">Login</h1>
+        <form class="formulario__form" action="#" method="post">
+            <label for="inputName">Nome de usuário:</label>
+            <input type="text" id="inputName" name="name">
+            <label for="inputSenha">Sua senha:</label>
+            <input type="password" id="inputSenha" name="senha">
+            <label>
+                <input type="checkbox" name="manterLogado"> Manter-me logado
+            </label>
+            <button type="submit" class="formulario__button">Logar</button>
+        </form>
+        <div class="cadastrar">
+            <p>Ainda não tem conta ? </p>
+            <button>Cadastre-se</button>
+        </div>
+    </main>
+</body>
+<script>
+
+    (function(){
+        'use strict';
+
+        var $formulario = document.querySelector('form')
+        var $inputName = document.querySelector('#inputName');
+        var $inputSenha = document.querySelector('#inputSenha');
+        var $butao = document.querySelector('.formulario__button');
+
+        $formulario.addEventListener('submit', function(e){
+            
+            if(!$inputName.value || !$inputSenha.value){
+                alert('Prencha todos os campos');
+                e.preventDefault();
+            } else {
+                alert('logou');
+            }
+
+        })
+
+    })()
+
+</script>
+</html>
