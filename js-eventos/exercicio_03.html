@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+
+    <style>
+
+        form *{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Exercício 03 - Eventos</h1>
+    <p>Permitir o envio do formulário somente após o usuário aceitar os termos do contrato (checkbox). Para este exemplo, vamos habilitat ou desabilitat o botão dependendo do checkbox</p>
+    <hr>
+    <form action="#" method="post">
+        <label for="inputName">Nome</label>
+        <input type="text" id="inputName" name="name">
+        <label for="inputSobreNome">Sobrenome</label>
+        <input type="text" id="inputSobreNome" name="sobreNome">
+        <label for="termos">Termos de uso</label>
+        <textarea name="termos" id="termos" cols="30" rows="10" disabled>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt ad quos mollitia perferendis quibusdam architecto obcaecati error neque, voluptatem vel!</textarea>
+        <label>
+            <input type="checkbox" id="checkbox"> Li e aceito os termos
+        </label>
+        <button id="btnEnvio" type="submit" disabled>Enviar</button>
+    </form>
+</body>
+<script>
+
+    var $checkbox = document.querySelector('#checkbox');
+    var $btnEnvio = document.querySelector('#btnEnvio');
+
+    $checkbox.addEventListener('change', function(){
+        if($checkbox.checked){
+            $btnEnvio.removeAttribute('disabled');
+        } else {
+            $btnEnvio.disabled = true;
+        }
+    })
+
+
+</script>
+</html>
