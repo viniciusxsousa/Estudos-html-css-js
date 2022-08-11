@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 05</title>
+
+    <style>
+
+        .area{
+            background-color: black;
+            width: 98vw;
+            height: 72vh;
+            display: flex;
+        }
+
+        .area__conteudo{
+            margin: auto;
+            width: 80%;
+            height: 90%;
+            background-color: rgb(114, 114, 114);
+            border-radius: 10px;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .area__listaTarefa{
+            list-style-type: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Exercicio 05 - Eventos</h1>
+    <p>Fazer uma pequena lista de tarefa onde o usuário pode acrescentar um novo item (li) na lista (ul) atrevés de um input e um botão. Esta lista deve está preenchida previamente com três itens quaisquer. Acrescentar eventos de click a cada li para marcar como feito.</p>
+    <hr>
+    <div class="area">
+        <div class="area__conteudo">
+            <input class="inputTarefa" type="text" placeholder="Infome o título da tarefa.">
+            <button class="btnAdicionar">Adicionar</button>
+            <hr>
+            <ul class="area__listaTarefa">
+                <li>Tarefa 1</li>
+                <li>Tarefa 2</li>
+                <li>Tarefa 3</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+
+    (function(){
+        'use strict';
+
+        var $btnAdicionar = document.querySelector('.btnAdicionar');
+        var $inputTarefa = document.querySelector('.inputTarefa');
+        var $listaDeTarefa = document.querySelector('.area__listaTarefa')
+        var $tarefas = $listaDeTarefa.querySelectorAll('li')
+        console.log($tarefas);
+
+        $btnAdicionar.addEventListener('click', adicionarTarefa);
+
+        for(var i = 0; i < $tarefas.length; i++){
+            $tarefas[i].addEventListener('click', marcarComoConcluida);
+        }
+
+        function adicionarTarefa(){
+            var nomeTarefa = $inputTarefa.value;
+
+            if(nomeTarefa === ''){
+                alert('Adicione um título para a tarefa');
+            } else {
+                $listaDeTarefa.innerHTML += '<li>' + nomeTarefa + '</li>';
+                $inputTarefa.value = ''
+                
+                for(var i = 0; i < $tarefas.length; i++){
+                    $tarefas[i].addEventListener('click', marcarComoConcluida);
+                }
+
+            }
+        }
+
+        function marcarComoConcluida(){
+            console.log(this.textContent);
+        }
+    
+    })()
+
+</script>
+</html>
