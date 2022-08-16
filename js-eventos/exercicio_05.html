@@ -59,6 +59,11 @@
         var $listaDeTarefa = document.querySelector('.area__listaTarefa')
         
         $btnAdicionar.addEventListener('click', adicionarTarefa);
+        $inputTarefa.addEventListener('keyup', function(e){
+            if(e.keyCode === 13){
+                adicionarTarefa();
+            }
+        })
 
         function adicionarTarefa(){
             var nomeTarefa = $inputTarefa.value;
