@@ -57,14 +57,8 @@
         var $btnAdicionar = document.querySelector('.btnAdicionar');
         var $inputTarefa = document.querySelector('.inputTarefa');
         var $listaDeTarefa = document.querySelector('.area__listaTarefa')
-        var $tarefas = $listaDeTarefa.querySelectorAll('li')
-        console.log($tarefas);
-
+        
         $btnAdicionar.addEventListener('click', adicionarTarefa);
-
-        for(var i = 0; i < $tarefas.length; i++){
-            $tarefas[i].addEventListener('click', marcarComoConcluida);
-        }
 
         function adicionarTarefa(){
             var nomeTarefa = $inputTarefa.value;
@@ -74,16 +68,7 @@
             } else {
                 $listaDeTarefa.innerHTML += '<li>' + nomeTarefa + '</li>';
                 $inputTarefa.value = ''
-                
-                for(var i = 0; i < $tarefas.length; i++){
-                    $tarefas[i].addEventListener('click', marcarComoConcluida);
-                }
-
             }
-        }
-
-        function marcarComoConcluida(){
-            console.log(this.textContent);
         }
     
     })()
