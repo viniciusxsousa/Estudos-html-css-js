@@ -77,12 +77,15 @@
 
         function adicionarTarefa(){
         
-            var nomeTarefa = $inputTarefa.value;
-
-            if(nomeTarefa === ''){
+            var li = document.createElement('li');
+            var texto = document.createTextNode($inputTarefa.value);
+            
+            if(texto === ''){
                 alert('Adicione um título para a tarefa');
             } else {
-                $listaDeTarefa.innerHTML += '<li>' + nomeTarefa + '</li>';
+                li.appendChild(texto);
+                $listaDeTarefa.appendChild(li);
+               
                 $inputTarefa.value = ''
             }
         }
