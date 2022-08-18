@@ -80,7 +80,9 @@
             var li = document.createElement('li');
             var texto = document.createTextNode($inputTarefa.value);
             
-            if(texto === ''){
+            li.addEventListener('click', marcarConcluido);
+
+            if(texto == ""){
                 alert('Adicione um título para a tarefa');
             } else {
                 li.appendChild(texto);
