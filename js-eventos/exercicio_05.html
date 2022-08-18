@@ -71,16 +71,17 @@
             }
         })
 
-        for(var i = 0; i < $tarefas.length; i++ ){
-            $tarefas[i].addEventListener('click', marcarConcluido);
-        }
+        $listaDeTarefa.addEventListener('click', function(e){
+            if(e.target.nodeName === 'LI'){
+                marcarConcluido(e.target);
+                removerTarefa(e.target);
+            }
+        })
 
         function adicionarTarefa(){
         
             var li = document.createElement('li');
             var texto = document.createTextNode($inputTarefa.value);
-            
-            li.addEventListener('click', marcarConcluido);
 
             if(texto == ""){
                 alert('Adicione um título para a tarefa');
@@ -92,10 +93,17 @@
             }
         }
 
-        function marcarConcluido(){
-            this.classList.toggle('feito');
+        function marcarConcluido(li){
+            li.classList.toggle('feito');
         }
     
+        function removerTarefa(li){
+            var resposta = confirm('Deseja excluir essa tarefa ?');
+            
+            if(resposta){
+                $listaDeTarefa.removeChild(li);
+            }
+        }
     })()
 
 </script>
