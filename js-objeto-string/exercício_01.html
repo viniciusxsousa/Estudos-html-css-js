@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 01</title>
+</head>
+<body>
+    <h1>Exercício 01 - Objeto String</h1>
+    <p>Criar uma função que receba um nome completo e retorna este nome formatado,  seguindo o exemplo: “João Pereira Silva” será transformado em “Silva, João Pereira”.</p>
+    <hr>
+</body>
+<script>
+    //1° Criar uma variável com o nome;
+    //2° Essa variável será passado para uma função;
+    //3° Essa função vai retornar formatado;
+
+    (function(){
+        'use strict';
+
+        var nome = 'Vinicius de Jesus Sousa';
+        var nomeFormatado = formatarNome(nome);
+
+        document.write(nomeFormatado);
+
+        function formatarNome(nome){
+            var nomeSeparado = [];
+            var nomeFormatado = '';
+            
+            nomeSeparado = nome.split(' ');
+            var comprimentoDoNome = nomeSeparado.length;
+
+            nomeFormatado = nomeSeparado[comprimentoDoNome - 1] + ', ';
+
+            for(var i = 0; i <= (comprimentoDoNome - 2); i++){
+                nomeFormatado += nomeSeparado[i] + ' ';
+            }   
+            return nomeFormatado
+        }
+        
+    })()
+</script>
+</html>
