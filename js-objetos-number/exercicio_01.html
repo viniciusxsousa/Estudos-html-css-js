@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 01</title>
+</head>
+<body>
+    <h1>Exercício 01 - Objeto Number</h1>
+    <p>Fazer um programa que calcule a média de dois número e retorne apenas com duas casas decimais. </p>
+    <hr>
+    <div>
+        <label for="nota01">Nota 1:</label>
+        <input type="number" id="nota01">
+    </div>
+    <div>
+        <label for="nota02">Nota 2:</label>
+        <input type="number" id="nota02">
+    </div>
+    <div>
+        <label for="media">Média:</label>
+        <input type="number" id="media" disabled>
+    </div>
+    <button class="btncalcular">Calcular</button>
+</body>
+<script>
+
+    (function(){
+        'use strict'
+
+        var $inputNota1 = document.querySelector('#nota01');
+        var $inputNota2 = document.querySelector('#nota02');
+        var $inputMedia = document.querySelector('#media');
+        var $btnCalcular = document.querySelector('.btncalcular');
+
+        $btnCalcular.addEventListener('click', function(){
+            var nota01 = parseFloat($inputNota1.value);
+            var nota02 = parseFloat($inputNota2.value);
+
+            var media = calcularMedia(nota01, nota02);
+
+            $inputMedia.value = media
+        })
+
+        function calcularMedia(n1, n2){
+            var media = (n1 + n2) / arguments.length;
+            media = media.toFixed(2);
+
+            return media;
+        }
+
+    })()
+
+</script>
+</html>
