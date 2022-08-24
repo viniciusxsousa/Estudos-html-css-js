@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 02</title>
+
+    <style>
+
+        .fundo{
+            width: 100%;
+            height: 60vh;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Exercício 02 - Objeto Math</h1>
+    <p>Desenvolver uma página que mude a imagem de fundo sempre que a página é recarregada (randômico). Será que é uma boa utilizarmos a função do exercício anterior ? </p>
+    <hr>
+    <div class="fundo"></div>
+</body>
+<script>
+
+    (function(){
+        'use strict';
+
+        var $fundo = document.querySelector('.fundo');
+        var numeroAleatorio = parseInt(Math.random() * 5)
+        
+        $fundo.style.backgroundImage = 'url(./images/' + numeroAleatorio + '.jpg)';
+
+    })()
+
+</script>
+</html>
