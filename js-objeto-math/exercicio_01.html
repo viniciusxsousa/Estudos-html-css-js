@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 01</title>
+</head>
+<body>
+    <h1>Exercício 01 - Objeto Math</h1>
+    <p>Criar um função chamada sortear que deve receber por parâmetro o número de valores possíveis de serem retornados pela função. Ex: sortear(2) deve retornar 0 ou 1; sortear(10) deve retornar números de 0 a 9.</p>
+    <hr>
+</body>
+<script>
+    (function(){
+        'use strict';
+
+        sortear(10)
+
+        function sortear(n){
+            var numeroSorteado = Math.random() * n;
+            numeroSorteado = parseInt(numeroSorteado);
+            console.log(numeroSorteado);
+            return numeroSorteado;
+        }
+    })()
+</script>
+</html>
