@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 03</title>
+
+    <style>
+
+        .js{
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Exercicio 03 - Objeto Array</h1>
+    <p>Selecionar todos os parágrafos da página e adicionar uma classe de destaque no parágrafo que contém a palavra javascript. </p>
+    <hr>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem dignissimos et asperiores rem beatae impedit? Repellendus hic culpa ut soluta!
+    </p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque similique culpa laudantium dignissimos fugiat dolores ipsum dolorum omnis cumque iste?</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam recusandae harum perferendis? Temporibus dicta fugiat sed, exercitationem mollitia maxime modi?</p>
+    <p>Lorem ipsum dolor sit amet javascript consectetur adipisicing elit. Officia illo ea perferendis. Necessitatibus minus aliquid rem similique, ab eveniet nihil!</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod dignissimos natus veniam eius adipisci voluptate eum nobis accusantium ducimus aut?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil laborum explicabo, dignissimos eligendi labore accusantium eius totam tempora sed culpa.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, javascript adipisicing elit. Excepturi vel explicabo, illo expedita similique ut tempora possimus aut nulla deserunt.
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum atque sequi incidunt aliquid praesentium? Asperiores cumque voluptate quos illum ipsam!</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est atque ipsa voluptas accusamus, repellat delectus numquam et dolorem aut cumque?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, voluptatem? Nesciunt aliquid aperiam animi quisquam sint soluta unde quam nobis.</p>
+</body>
+<script>
+
+    (function(){
+
+        var $paragrafos = document.querySelectorAll('p');
+
+        console.log($paragrafos);
+
+        for(var i = 0; i < $paragrafos.length; i++){
+            var paragrafo = $paragrafos[i].textContent;
+            var arry = paragrafo.split(' ');
+            var existeJs = arry.some(elemento => elemento === 'javascript');
+
+            if(existeJs){
+                $paragrafos[i].classList.add('js');
+            }
+        }
+
+    })();
+
+</script>
+</html>
