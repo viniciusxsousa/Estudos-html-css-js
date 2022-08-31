@@ -15,19 +15,18 @@
     (function(){
         "use strict";
 
-        var existe0 = null
-
+        var existeZero = null
 
         calcularMedia(10, 9.5, 4.5, 6);
 
         function calcularMedia(){
            var arrayNotas = converterParaArray(arguments);
             
-           existe0 = arrayNotas.some(function(item){
+           existeZero = arrayNotas.some(function(item){
             return item === 0;
            }); 
 
-           if(existe0){
+           if(existeZero){
             console.log('Infelizmente você tem uma nota 0. Está reprovado, estude mais!');
             return;
            }
