@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exe 01</title>
+</head>
+<body>
+    <h1>Exercício 01 - Objetos Array</h1>
+    <p>Criar uma função que receba várias notas e calcule a media entre elas. Contudo, se houver pelo menos uma nota zero, reprovar automaticamente.</p>
+</body>
+<script>
+
+    (function(){
+        "use strict";
+
+        var existe0 = null
+
+
+        calcularMedia(10, 9.5, 4.5, 6);
+
+        function calcularMedia(){
+           var arrayNotas = converterParaArray(arguments);
+            
+           existe0 = arrayNotas.some(function(item){
+            return item === 0;
+           }); 
+
+           if(existe0){
+            console.log('Infelizmente você tem uma nota 0. Está reprovado, estude mais!');
+            return;
+           }
+
+           var somaNotas = arrayNotas.reduce(function(inicial, atual){
+            return inicial + atual;
+           })
+
+           var media = somaNotas / arguments.length;
+           
+           return media; 
+        }
+
+
+        function converterParaArray(elemento){
+            var array = []
+
+            for(var i = 0; i < elemento.length; i++){
+                array.push(elemento[i]);
+            }
+
+            return array;
+        }
+
+    })();
+
+</script>
+</html>
