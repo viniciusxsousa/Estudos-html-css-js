@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exe 02</title>
+</head>
+<body>
+    <h1>Exercicio 02 - Objeto array</h1>
+    <p>Selecionar todos os parágrafos da página e, se tiver mais de 10 palavras, mostras as primeiras 10 seguido de reticências.</p>
+    <hr>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam volutpat dui id accumsan pharetra. Quisque auctor libero ornare nunc luctus, eu dictum quam faucibus. Fusce sollicitudin vel purus ac lobortis. Aenean ac neque pharetra arcu fringilla eleifend in in leo. Mauris viverra ut eros et porttitor. Nulla fermentum, tortor commodo tempus egestas, felis nunc euismod dui, nec condimentum libero sem ac ipsum. Nullam nec purus eget purus volutpat pellentesque. Donec eget felis fermentum, egestas tortor non, tincidunt erat. Donec pellentesque nunc eu ipsum lacinia faucibus non et felis. Morbi facilisis ut lacus eu aliquet.</p>
+
+    <p>Ut sapien nulla, varius eu euismod eu, efficitur ac est. Maecenas bibendum diam ac volutpat interdum. Suspendisse ornare ligula ultricies, luctus eros id, pretium nunc. Etiam non risus sed odio imperdiet auctor eget eu risus. Morbi varius diam non sapien maximus vehicula. Aliquam non risus purus. Duis pretium metus vitae mi tristique convallis. Integer sed fermentum sapien.</p>
+
+    <p>Proin rutrum neque at pretium pretium. Nam vel egestas ligula, non lacinia turpis. Nunc magna orci, placerat malesuada tellus vel, finibus tempor justo. Morbi congue nec augue eu pellentesque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent magna tellus, aliquam eget volutpat vel, blandit nec diam. Etiam fermentum semper placerat. Vestibulum accumsan maximus ante, faucibus tempor nibh gravida id.</p>
+</body>
+<script>
+
+    (function(){
+        "use strict";
+
+        var $paragrafos = document.querySelectorAll('p');
+
+        percorrerParagrafos($paragrafos);
+
+        function percorrerParagrafos(paragrafos){
+            for(var i = 0; i < paragrafos.length; i++){
+                var paragrafo = paragrafos[i].textContent;
+                var arryPalavrasParagrafos = paragrafo.split(' ');
+                var paragrafosReduzidos = arryPalavrasParagrafos.slice(0, 10)
+                paragrafosReduzidos.push('...');
+                paragrafos[i].textContent = paragrafosReduzidos.join(' ')
+
+                console.log(paragrafosReduzidos.join(' '));
+            }
+        }
+
+    })()
+
+</script>
+</html>
