@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 02</title>
+</head>
+<body>
+    <h1>Exercicio 02 - Objeto Date</h1>
+    <p>Criar uma função que retorne uma data formatada no padrão brasileiro: DD/MM/AAA.</p>
+</body>
+<script>
+
+    (function(){
+        'use strict';
+
+        var dataAtual = new Date();
+
+        console.log(converDataPadraoBr(dataAtual));
+        
+        function converDataPadraoBr(objetoData){
+            var dia = objetoData.getDate();
+            var mes = objetoData.getMonth();
+            var ano = objetoData.getFullYear();
+
+            mes += 1;
+
+            return dia + '/' + mes + '/' + ano;
+        }
+
+    })()
+
+</script>
+</html>
