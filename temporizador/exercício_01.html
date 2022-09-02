@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 01</title>
+
+    <style>
+
+        .banner{
+            position: absolute;
+            display: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
+        }
+
+        .banner__close{
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <h1>Exercicio 01 - Temporizador</h1>
+    <p>O cliente pediu para fazer um pop-up bem irritante que pula na interface do usuário depois de 5 segundos. Este mesmo pop-up deve ser fechado automaticamente após 5 segundos (mesmo que o usuário ainda estava-o lendo. Lembre-se, a ideia é que seja extremamente irritante).</p>
+    <hr>
+
+    <div class="banner">
+        <h2>Banner</h2>
+        <button class="banner__close">X</button>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut hic eligendi asperiores itaque fugit, sapiente ipsa esse! Perferendis corrupti praesentium iste sunt distinctio voluptates fugit saepe expedita quod adipisci amet autem illo asperiores, perspiciatis quae laborum! Omnis veritatis maxime nisi.</p>
+    </div>
+
+</body>
+<script>
+
+    (function(){
+        'use strict';
+        
+        var $banner = document.querySelector('.banner');
+
+
+        setInterval(mostrarBanner, 5000);
+        setInterval(ocultarBanner, 10000);
+
+        function ocultarBanner(){
+            $banner.style.display = 'none';
+        } 
+
+        function mostrarBanner(){
+            $banner.style.display = 'block';
+        }
+
+
+    })()
+
+</script>
+</html>
