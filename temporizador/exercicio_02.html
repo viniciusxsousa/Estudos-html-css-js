@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Ex 02</title>
+    </head>
+
+    <body>
+        <h1>Exercício 01 - Temporizador</h1>
+        <p>Mostrar Relógio. Criar uma função que retorne uma hora atual no formato hh:mm:ss. Mostre esse texto numa div qualquer na tela. Agora execute essa função a cada 1 segundo.</p>
+        <hr>
+        <div class="relogio"></div>
+    </body>
+    <script>
+
+        (function(){
+            'use strict';
+
+            var $relogio = document.querySelector('.relogio');
+
+            setInterval(exibirHora, 1000);
+            
+            function exibirHora(){
+                var hora = horaAtual();
+
+                $relogio.textContent = hora;
+            }
+
+            function horaAtual(){
+                var horario = new Date();
+                var h = horario.getHours() >= 10 ? horario.getHours() : '0' + horario.getHours();
+                var m = horario.getMinutes() >= 10 ? horario.getMinutes() : '0' + horario.getMinutes();
+                var s = horario.getSeconds() >= 10 ? horario.getSeconds() : '0' + horario.getSeconds();
+
+                return h + ':' + m + ':' + s
+            }
+
+        })()
+
+    </script>
+</html>
