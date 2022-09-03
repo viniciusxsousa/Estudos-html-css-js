@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Ex 03</title>
+    </head>
+    <body>
+
+        <h1>Exercício 03 - Temporizador</h1>
+        <p>Mostrar cronômetro. Faça uma interface contendo um input text e três botões. Ao clicar no primeiro deve iniciar um cronômetro. O segundo deve pausar ou continuar. O terceiro deve resetar o cronometro. </p>
+        <hr>
+        <input type="text" id="cronometro">
+        <button id="btnIniciar">Iniciar</button>
+        <button id="pausar">Pausar</button>
+        <button id="limpar">Limpar</button>
+    </body>
+    <script>
+
+        (function(){
+            'use strict';
+
+            var $cronometro = document.querySelector('#cronometro');
+            var $btnIniciar = document.querySelector('#btnIniciar');
+            var $btnPausar = document.querySelector('#pausar');
+            var $btnLimpar = document.querySelector('#limpar');
+
+            var tempoIniciado = 0;
+            var tempoPausado = 0;
+            var tempoDecorrido = 0;
+
+            var intervaloIniciar = null;
+
+            $btnIniciar.addEventListener('click', function(){
+                var iniciado = new Date();
+                tempoIniciado = iniciado.getTime();
+                
+                intervaloIniciar = setInterval(function(){
+                    tempoDecorrido = (new Date()) - tempoIniciado;
+                    $cronometro.value = tempoDecorrido;
+                }, 1000);
+            })
+
+            $btnPausar.addEventListener('click', function(){
+                var pausado = new Date();
+                tempoPausado = pausado.getTime();
+                clearInterval(intervaloIniciar);
+            });
+
+
+
+        })();
+
+    </script>
+</html>
