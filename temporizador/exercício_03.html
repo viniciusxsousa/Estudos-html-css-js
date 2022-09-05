@@ -24,29 +24,50 @@
             var $btnPausar = document.querySelector('#pausar');
             var $btnLimpar = document.querySelector('#limpar');
 
-            var tempoIniciado = 0;
-            var tempoPausado = 0;
-            var tempoDecorrido = 0;
+            $btnIniciar.addEventListener('click', iniciar);
+            $btnPausar.addEventListener('click', pausar);
+            $btnLimpar.addEventListener('clikc', limpar);
 
-            var intervaloIniciar = null;
+            var tsInicial = 0;
+            var tsAgora = 0;
+            var tsDiferenca = 0;
 
-            $btnIniciar.addEventListener('click', function(){
-                var iniciado = new Date();
-                tempoIniciado = iniciado.getTime();
-                
-                intervaloIniciar = setInterval(function(){
-                    tempoDecorrido = (new Date()) - tempoIniciado;
-                    $cronometro.value = tempoDecorrido;
-                }, 1000);
-            })
+            function iniciar(){
+                tsInicial = Date.now();
+                iniciarCronometro();
+            };
 
-            $btnPausar.addEventListener('click', function(){
-                var pausado = new Date();
-                tempoPausado = pausado.getTime();
-                clearInterval(intervaloIniciar);
-            });
+            function pausar(){};
 
+            function limpar(){};
 
+            function iniciarCronometro(){
+                setInterval(function(){
+                    tsAgora = Date.now();
+                    tsDiferenca = tsAgora - tsInicial;
+                    $cronometro.value = converterTempo(tsDiferenca);
+                }, 100);
+            }
+
+            function converterTempo(ms){
+                if(ms < 1000){
+                    return ms;
+                } else if (ms < 60000){
+                    var s = ms / 1000;
+                    s = parseInt(s);
+                    var c = ms - (s * 1000);
+                    c = parseInt(c);
+                    return s + ':' + c;
+                } else {
+                    var m = ms / 60000;
+                    m = parseInt(m);
+                    var s = ms/1000 - (m * 60);
+                    s = parseInt(s);
+                    var c = ms - (s * 1000) - (m * 60 * 1000);
+                    c = parseInt(c);
+                    return m + ":" + s + ':' + c
+                }
+            }
 
         })();
 
