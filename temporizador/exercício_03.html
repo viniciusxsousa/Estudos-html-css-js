@@ -31,7 +31,8 @@
             $btnPausar.disabled = true;
             $btnParar.disabled = true;
 
-
+            const MINUTOS = 60000;
+        
             var tsInicial = 0;
             var tsAgora = 0;
             var tsDiferenca = 0;
@@ -58,13 +59,13 @@
                 if(pausado){
                     tsInicial = Date.now();
                     iniciarCronometro();
-                    pausado = false;
                 } else {
                     clearInterval(intervaloCronometro);
                     tsPausado = Date.now();
                     tsDecorrido += (tsPausado - tsInicial);
-                    pausado = true;
                 }
+                
+                pausado = !pausado;
             };
 
             function parar(){
@@ -94,20 +95,16 @@
             function converterTempo(ms){
                 if(ms < 1000){
                     return ms;
-                } else if (ms < 60000){
+                } else if (ms < MINUTOS){
                     var s = ms / 1000;
                     s = parseInt(s);
                     var c = ms - (s * 1000);
                     c = parseInt(c);
                     return s + ':' + c;
                 } else {
-                    var m = ms / 60000;
+                    var m = ms / MINUTOS;
                     m = parseInt(m);
-                    var s = ms/1000 - (m * 60);
-                    s = parseInt(s);
-                    var c = ms - (s * 1000) - (m * 60 * 1000);
-                    c = parseInt(c);
-                    return m + ":" + s + ':' + c
+                    return m + ":" + converterTempo(ms - m * MINUTOS)
                 }
             }
 
