@@ -11,8 +11,8 @@
         <hr>
         <input type="text" id="cronometro">
         <button id="btnIniciar">Iniciar</button>
-        <button id="pausar">Pausar</button>
-        <button id="limpar">Limpar</button>
+        <button id="pausar">Pausar/Retomar</button>
+        <button id="parar">Parar</button>
     </body>
     <script>
 
@@ -22,29 +22,71 @@
             var $cronometro = document.querySelector('#cronometro');
             var $btnIniciar = document.querySelector('#btnIniciar');
             var $btnPausar = document.querySelector('#pausar');
-            var $btnLimpar = document.querySelector('#limpar');
+            var $btnParar = document.querySelector('#parar');
 
             $btnIniciar.addEventListener('click', iniciar);
             $btnPausar.addEventListener('click', pausar);
-            $btnLimpar.addEventListener('clikc', limpar);
+            $btnParar.addEventListener('click', parar);
+
+            $btnPausar.disabled = true;
+            $btnParar.disabled = true;
+
 
             var tsInicial = 0;
             var tsAgora = 0;
             var tsDiferenca = 0;
+            var tsDecorrido = 0;
+            var tsPausado = 0;
+
+            var intervaloCronometro = null;
+            var intervaloPausa = null;
+            var pausado = false;
+
+            $cronometro.value = "00:00:000";
 
             function iniciar(){
                 tsInicial = Date.now();
+
+                $btnIniciar.disabled = true;
+                $btnPausar.disabled = false;
+                $btnParar.disabled = false;
+
                 iniciarCronometro();
             };
 
-            function pausar(){};
+            function pausar(){
+                if(pausado){
+                    tsInicial = Date.now();
+                    iniciarCronometro();
+                    pausado = false;
+                } else {
+                    clearInterval(intervaloCronometro);
+                    tsPausado = Date.now();
+                    tsDecorrido += (tsPausado - tsInicial);
+                    pausado = true;
+                }
+            };
 
-            function limpar(){};
+            function parar(){
+                clearInterval(intervaloCronometro);
+                $cronometro.value = "00:00:000"
+
+                tsDecorrido = 0;
+                tsInicial = 0;
+                tsPausado = 0;
+
+                $btnIniciar.disabled = false;
+                $btnPausar.disabled = true;
+                $btnParar.disabled = true;
+            };
 
             function iniciarCronometro(){
-                setInterval(function(){
+                clearInterval(intervaloPausa);
+
+                intervaloCronometro = setInterval(function(){
                     tsAgora = Date.now();
                     tsDiferenca = tsAgora - tsInicial;
+                    tsDiferenca += tsDecorrido;
                     $cronometro.value = converterTempo(tsDiferenca);
                 }, 100);
             }
